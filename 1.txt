@@ -1,0 +1,18 @@
+pipeline {
+    agent {label'jdk11'}
+    stages {
+        stage('clone') {
+         steps {
+            git url:'git@github.com:QtBhavani/spring-petclinic.git' , branch :'develop'
+            }
+        }
+            stage('install') {
+                steps {
+             sh 'mvn packege'
+                }
+            }
+
+        }
+
+    }
+
