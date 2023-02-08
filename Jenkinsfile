@@ -16,7 +16,7 @@ pipeline {
                            
      stage('build') {
             steps {
-                sh "/opt/apache-maven-3.6.3/bin/mvn ${params.MAVEN_GOAL}"
+                sh "/usr/share/maven/bin/mvn ${params.MAVEN_GOAL}"
             }
         }
         stage('archive results') {
