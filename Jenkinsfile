@@ -6,6 +6,7 @@ node('JDK11') {
      sh 'mvn package'
  }
  stage("archive results"){
-     junit'**/test-reports/*.xml'   
+      sh 'ln -s tests/test-results-unit.xml $WORKSPACE'
+      junit "test-results-unit.xml"  
  }
 }
