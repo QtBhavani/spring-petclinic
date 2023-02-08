@@ -3,7 +3,7 @@ node('JDK11') {
    git branch: 'REL', url: 'https://github.com/QtBhavani/spring-petclinic.git'
 }                          
  stage("build"){
-     sh '/opt/apache-maven-3.6.3/bin/mvn package'
+     sh 'mvn package'
  }
  stage("archive results"){
      junit'**surefire-reports/*.xml'   
