@@ -6,6 +6,6 @@ node('JDK11') {
      sh 'mvn package'
  }
  stage("archive results"){
-     junit'**surefire-reports/*.xml'   
+     junit'**/test-reports/*.xml'   
  }
 }
