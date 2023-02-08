@@ -1,7 +1,8 @@
 pipeline {
     agent { label 'JDK11' }
-    parameters { choice(name: 'BRANCH_TO_BUILD', choices: ['main', 'REL', ], description: 'branch to be selected') }
-               { string(name: '$MAVEN_GOAL', defaultValue: 'package', description: 'build the package') }
+    parameters {
+        choice(name: 'BRANCH_TO_BUILD', choices: ['main', 'REL', ], description: 'branch to be selected') }
+        string(name: 'MAVEN_GOAL', defaultValue: 'package', description: 'build the package') }
    
     triggers {
          pollSCM('* * * * *') 
